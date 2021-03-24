@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class ThumbnailImageWidget extends StatelessWidget {
@@ -10,7 +8,13 @@ class ThumbnailImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: new BoxDecoration(
-        borderRadius: BorderRadius.circular(15.0),
+        boxShadow: [
+          new BoxShadow(
+            color: Colors.black,
+            blurRadius: 5.0,
+          ),
+        ],
+        borderRadius: BorderRadius.circular(1.0),
         image: new DecorationImage(
           image: new AssetImage(thumbnailImagePath),
           fit: BoxFit.fill,

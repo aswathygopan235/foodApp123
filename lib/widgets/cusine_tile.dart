@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'package:flutter/material.dart';
 
 class CusineTile extends StatelessWidget {
@@ -18,6 +17,14 @@ class CusineTile extends StatelessWidget {
               height: 70.0,
               child: Container(
                 decoration: new BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey[400],
+                      blurRadius: 4.0,
+                      spreadRadius: 1.0,
+                      // offset: Offset(4, 8), // Shadow position
+                    ),
+                  ],
                   borderRadius: BorderRadius.circular(5.0),
                   image: new DecorationImage(
                     image: new AssetImage(cusineImagePath),

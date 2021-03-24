@@ -21,42 +21,45 @@ class NewsTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-      child: SizedBox(
-        height: 100,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            AspectRatio(
-              aspectRatio: 4 / 3,
-              child:
-                  ThumbnailImageWidget(thumbnailImagePath: thumbnailImagePath),
-            ),
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
-                child: _ArticleDescription(
-                  title: title,
-                  subtitle: subtitle,
-                  author: author,
-                  publishDate: publishDate,
-                  readDuration: readDuration,
-                ),
+      child: Card(
+        elevation: 5.0,
+        child: SizedBox(
+          height: 100,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              AspectRatio(
+                aspectRatio: 4 / 3,
+                child: ThumbnailImageWidget(
+                    thumbnailImagePath: thumbnailImagePath),
               ),
-            )
-          ],
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
+                  child: _NewsArticleDescription(
+                    title: title,
+                    subtitle: subtitle,
+                    author: author,
+                    publishDate: publishDate,
+                    readDuration: readDuration,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 }
 
-class _ArticleDescription extends StatelessWidget {
+class _NewsArticleDescription extends StatelessWidget {
   final String title;
   final String subtitle;
   final String author;
   final String publishDate;
   final String readDuration;
-  _ArticleDescription(
+  _NewsArticleDescription(
       {this.title,
       this.subtitle,
       this.author,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_blog_app/screens/restaurants_screen.dart';
 
 class FoodScreenDrawer extends StatelessWidget {
   @override
@@ -39,6 +40,7 @@ class FoodScreenDrawer extends StatelessWidget {
             onPressedFunction: () {
               //do functions
               Navigator.pop(context);
+              Navigator.pushNamed(context, RestaurantsScreen.id);
             },
           ),
           NewListOption(
@@ -104,16 +106,7 @@ class NewListOption extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         ListTile(
-          // leading: Container(
-          //   child: CircleAvatar(
-          //     radius: 20.0,
-          //     backgroundColor: iconColour,
-          //     child: Icon(
-          //       iconImage,
-          //       color: Colors.white,
-          //     ),
-          //   ),
-          // ),
+          onTap: onPressedFunction,
           title: Container(
             alignment: Alignment.center,
             height: 55.0,
@@ -137,14 +130,11 @@ class NewListOption extends StatelessWidget {
                     ),
                   ],
                 ),
-                // Divider(height: 3.0, color: Colors.grey[900]),
               ],
             ),
           ),
-
-          onTap: onPressedFunction,
+          // onTap: onPressedFunction,
         ),
-        // Divider(height: 3.0, color: Colors.grey[900]),
         SizedBox(
           height: 1.0,
           width: 250.0,
@@ -156,4 +146,3 @@ class NewListOption extends StatelessWidget {
     );
   }
 }
-// Divider(height: 3.0, color: Colors.grey[900]),
