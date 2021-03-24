@@ -3,6 +3,7 @@ import 'package:food_blog_app/widgets/list_cusine.dart';
 import 'package:food_blog_app/widgets/list_feature_recipe.dart';
 import 'package:food_blog_app/widgets/list_news.dart';
 import 'package:food_blog_app/screens/food_screen_drawer.dart';
+import 'package:food_blog_app/utilities/constants.dart';
 
 class FoodScreen extends StatelessWidget {
   @override
@@ -26,11 +27,7 @@ class FoodScreen extends StatelessWidget {
                   ),
                   Text(
                     'Eat',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 30.0,
-                      fontWeight: FontWeight.w500,
-                    ),
+                    style: kNavbarHeadingTextStyle,
                   ),
                 ],
               ),
@@ -41,13 +38,7 @@ class FoodScreen extends StatelessWidget {
                 padding: EdgeInsets.symmetric(
                   horizontal: 10.0,
                 ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20.0),
-                    topRight: Radius.circular(20.0),
-                  ),
-                ),
+                decoration: kWhiteSpaceBoxDecoration,
                 child: SingleChildScrollView(
                   child: Column(
                     children: <Widget>[
@@ -63,10 +54,7 @@ class FoodScreen extends StatelessWidget {
                       ),
                       Text(
                         'Popular News',
-                        style: TextStyle(
-                          fontSize: 17.0,
-                          fontWeight: FontWeight.w800,
-                        ),
+                        style: kSubheadingTextStyle,
                       ),
                       Container(
                         height: 500.0,
