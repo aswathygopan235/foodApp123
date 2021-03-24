@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_blog_app/utilities/constants.dart';
-import 'package:food_blog_app/widgets/restaurant_tile.dart';
+
 import 'package:food_blog_app/widgets/list_restaurants.dart';
 
 class RestaurantsScreen extends StatelessWidget {
