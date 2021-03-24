@@ -12,9 +12,15 @@ class FoodScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Icon(
-          Icons.menu,
-          color: Colors.black,
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: new Icon(
+              Icons.list,
+              color: Colors.black,
+              size: 50.0,
+            ),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
         ),
         centerTitle: true,
         elevation: 0,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_blog_app/models/restaurant_data.dart';
+import 'package:food_blog_app/screens/restaurant_details_screen.dart';
 import 'package:food_blog_app/widgets/restaurant_tile.dart';
 
 class ListRestaurant extends StatelessWidget {
@@ -15,6 +16,9 @@ class ListRestaurant extends StatelessWidget {
           restaurantName: restaurant.restaurantName,
           restaurantDescription: restaurant.restaurantDescription,
           restaurantThumbnailImagePath: restaurant.restaurantThumbnailImagePath,
+          onPressedFunction: () {
+            Navigator.pushNamed(context, RestaurantDetailsScreen.id);
+          },
         );
       },
     );

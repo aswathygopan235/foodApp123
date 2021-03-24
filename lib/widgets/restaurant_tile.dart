@@ -7,38 +7,42 @@ class RestaurantTile extends StatelessWidget {
   final String restaurantThumbnailImagePath;
   final String restaurantName;
   final String restaurantDescription;
+  final Function onPressedFunction;
 
-  RestaurantTile({
-    this.restaurantThumbnailImagePath,
-    this.restaurantName,
-    this.restaurantDescription,
-  });
+  RestaurantTile(
+      {this.restaurantThumbnailImagePath,
+      this.restaurantName,
+      this.restaurantDescription,
+      this.onPressedFunction});
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
-      child: Card(
-        elevation: 10.0,
-        child: SizedBox(
-          height: 150.0,
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              AspectRatio(
-                aspectRatio: 1,
-                child: ThumbnailImageWidget(
-                    thumbnailImagePath: restaurantThumbnailImagePath),
-              ),
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
-                  child: _RestaurantTileDescription(
-                    restaurantName: restaurantName,
-                    restaurantDescription: restaurantDescription,
-                  ),
+      child: GestureDetector(
+        onTap: onPressedFunction,
+        child: Card(
+          elevation: 10.0,
+          child: SizedBox(
+            height: 150.0,
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                AspectRatio(
+                  aspectRatio: 1,
+                  child: ThumbnailImageWidget(
+                      thumbnailImagePath: restaurantThumbnailImagePath),
                 ),
-              )
-            ],
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
+                    child: _RestaurantTileDescription(
+                      restaurantName: restaurantName,
+                      restaurantDescription: restaurantDescription,
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
