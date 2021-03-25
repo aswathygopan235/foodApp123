@@ -18,16 +18,15 @@ class FoodTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-      child: Card(
-        elevation: 5.0,
+      padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
+      child: Container(
         child: SizedBox(
           height: 100,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               AspectRatio(
-                aspectRatio: 4 / 3,
+                aspectRatio: 1,
                 child: ThumbnailImageWidget(
                     thumbnailImagePath: foodThumbnailImagePath),
               ),
@@ -50,15 +49,10 @@ class FoodTile extends StatelessWidget {
 }
 
 class _FoodDescription extends StatelessWidget {
-  final String foodThumbnailImagePath;
   final String foodName;
   final String foodDescription;
   final String foodPrice;
-  _FoodDescription(
-      {this.foodThumbnailImagePath,
-      this.foodName,
-      this.foodDescription,
-      this.foodPrice});
+  _FoodDescription({this.foodName, this.foodDescription, this.foodPrice});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -100,7 +94,7 @@ class _FoodDescription extends StatelessWidget {
                 '$foodPrice',
                 style: const TextStyle(
                   fontSize: 12.0,
-                  color: Colors.black87,
+                  color: Colors.redAccent,
                 ),
               ),
             ],

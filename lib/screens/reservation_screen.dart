@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:food_blog_app/utilities/constants.dart';
 
-import 'package:food_blog_app/widgets/list_restaurant.dart';
+import 'package:food_blog_app/widgets/list_reservation.dart';
 
-class RestaurantsScreen extends StatelessWidget {
+class ReservationScreen extends StatelessWidget {
   static String id = 'restaurant_screen';
 
   @override
@@ -13,7 +13,7 @@ class RestaurantsScreen extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
         title: Text(
-          'Restaurants',
+          'Reservations',
           style: kNavbarHeadingTextStyle,
         ),
         backgroundColor: Colors.orangeAccent,
@@ -36,8 +36,8 @@ class RestaurantsScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 18.0),
                   child: Container(
-                    child: ListRestaurant(),
-                  ),
+                      // child: ListReservation(),
+                      ),
                 ),
               ),
             ),

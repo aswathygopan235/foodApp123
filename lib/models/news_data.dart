@@ -6,23 +6,20 @@ class NewsData {
         thumbnailImagePath: 'images/food1.jpg',
         title: 'A Title',
         subtitle: 'Subtitle Ctains some description',
-        author: 'Author',
         publishDate: 'Published date',
-        readDuration: 'Read duration'),
+        timePosted: 'Time Posted'),
     News(
         thumbnailImagePath: 'images/food1.jpg',
         title: 'A Title',
         subtitle: 'Subtitle Ctains some description',
-        author: 'Author',
         publishDate: 'Published date',
-        readDuration: 'Read duration'),
+        timePosted: 'Time Posted'),
     News(
         thumbnailImagePath: 'images/food1.jpg',
         title: 'A Title',
         subtitle: 'Subtitle Ctains some description',
-        author: 'Author',
         publishDate: 'Published date',
-        readDuration: 'Read duration'),
+        timePosted: 'Time Posted'),
   ];
 
   int get newsCount {

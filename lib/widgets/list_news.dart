@@ -15,9 +15,8 @@ class ListNews extends StatelessWidget {
           thumbnailImagePath: news.thumbnailImagePath,
           title: news.title,
           subtitle: news.subtitle,
-          author: news.author,
           publishDate: news.publishDate,
-          readDuration: news.readDuration,
+          timePosted: news.timePosted,
         );
       },
     );

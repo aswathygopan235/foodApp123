@@ -1,23 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:food_blog_app/utilities/constants.dart';
 import 'package:food_blog_app/widgets/list_food.dart';
+import 'package:food_blog_app/screens/reservation_screen.dart';
 
 class RestaurantDetailsScreen extends StatelessWidget {
   static String id = 'restaurant_details_screen';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: SizedBox(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              AspectRatio(
-                aspectRatio: 1.2,
-                child: Container(
-                  // height: 500.0,
-                  // width: 200.0,
-                  decoration: new BoxDecoration(
+      body: SingleChildScrollView(
+        child: Stack(
+          children: <Widget>[
+            // The containers in the background
+            Column(
+              children: <Widget>[
+                new Container(
+                  height: MediaQuery.of(context).size.height * .40,
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(1.0),
                     image: new DecorationImage(
                       image: new AssetImage('images/food3.jpg'),
@@ -25,60 +24,77 @@ class RestaurantDetailsScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                Container(
+                  height: MediaQuery.of(context).size.height * .35,
+                  color: Colors.white,
+                )
+              ],
+            ),
+
+            Container(
+              alignment: Alignment.topCenter,
+              padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height * .35,
               ),
-              Container(
-                child: Expanded(
-                  //WhiteSpace start
-                  child: Container(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 10.0,
-                    ),
-                    decoration: kWhiteSpaceBoxDecoration,
-                    child: Container(
-                      child: Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.symmetric(
-                                vertical: 20.0,
-                                // horizontal: 20.0
-                              ),
-                              child: Text(
-                                'This is some text',
-                                textAlign: TextAlign.left,
-                                style: TextStyle(
-                                    fontWeight: FontWeight.w800,
-                                    textBaseline: TextBaseline.alphabetic),
-                              ),
+              child: Container(
+                // height: 550.0,
+                // height: MediaQuery.of(context).size.height * 1,
+
+                width: MediaQuery.of(context).size.width * 1,
+                child: Container(
+                  decoration: kWhiteSpaceBoxDecoration,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 15.0, horizontal: 15.0),
+                          child: Text(
+                            'Some Text',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 20.0,
                             ),
-                            Text('This is some text'),
-                            Divider(thickness: 2.0),
-                            ElevatedButton(
-                              onPressed: null,
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Colors.red),
-                              ),
-                              child: Text(
-                                'Button Text',
-                              ),
-                            ),
-                            Container(
-                              height: 200.0,
-                              child: ListFood(),
-                            ),
-                          ],
+                          ),
                         ),
-                      ),
-                    ),
-                  ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                            vertical: 15.0,
+                            horizontal: 10.0,
+                          ),
+                          child: Text(
+                            'Some Text',
+                            style: TextStyle(
+                              fontSize: 15.0,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 70.0),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, ReservationScreen.id);
+                            },
+                            style: ElevatedButton.styleFrom(
+                              elevation: 10,
+                            ),
+                            child: Text(' Elevated Button'),
+                          ),
+                        ),
+                        Divider(
+                          color: Colors.grey[300],
+                        ),
+                        Container(
+                          // height: MediaQuery.of(context).size.height * .95,
+                          height: 300.0,
+                          child: ListFood(),
+                        ),
+                      ]),
                 ),
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

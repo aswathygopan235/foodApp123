@@ -7,22 +7,19 @@ class NewsTile extends StatelessWidget {
   final String thumbnailImagePath;
   final String title;
   final String subtitle;
-  final String author;
   final String publishDate;
-  final String readDuration;
+  final String timePosted;
   NewsTile(
       {this.thumbnailImagePath,
       this.title,
       this.subtitle,
-      this.author,
       this.publishDate,
-      this.readDuration});
+      this.timePosted});
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-      child: Card(
-        elevation: 5.0,
+      child: Container(
         child: SizedBox(
           height: 100,
           child: Row(
@@ -39,9 +36,8 @@ class NewsTile extends StatelessWidget {
                   child: _NewsArticleDescription(
                     title: title,
                     subtitle: subtitle,
-                    author: author,
                     publishDate: publishDate,
-                    readDuration: readDuration,
+                    timePosted: timePosted,
                   ),
                 ),
               )
@@ -56,15 +52,11 @@ class NewsTile extends StatelessWidget {
 class _NewsArticleDescription extends StatelessWidget {
   final String title;
   final String subtitle;
-  final String author;
+
   final String publishDate;
-  final String readDuration;
+  final String timePosted;
   _NewsArticleDescription(
-      {this.title,
-      this.subtitle,
-      this.author,
-      this.publishDate,
-      this.readDuration});
+      {this.title, this.subtitle, this.publishDate, this.timePosted});
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -103,14 +95,7 @@ class _NewsArticleDescription extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               Text(
-                '$author',
-                style: const TextStyle(
-                  fontSize: 12.0,
-                  color: Colors.black87,
-                ),
-              ),
-              Text(
-                '$publishDate - $readDuration',
+                '$publishDate - $timePosted',
                 style: const TextStyle(
                   fontSize: 12.0,
                   color: Colors.black54,

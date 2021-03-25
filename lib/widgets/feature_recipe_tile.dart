@@ -10,7 +10,7 @@ class FeatureRecipeTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 20),
+        padding: const EdgeInsets.symmetric(horizontal: 15.0, vertical: 5),
         child: Column(
           children: [
             Container(
@@ -34,7 +34,7 @@ class FeatureRecipeTile extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(18.0),
+              padding: const EdgeInsets.all(5.0),
               child: Text(
                 recipeTitle,
                 style: TextStyle(

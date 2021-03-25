@@ -35,37 +35,33 @@ class FoodScreen extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: [
-            // Container(
-            //   padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 25.0),
-            //   child: Row(
-            //     crossAxisAlignment: CrossAxisAlignment.center,
-            //     children: [
-            //       Icon(Icons.list, size: 50.0, color: Colors.black),
-            //       // NewPopupMenuButton(),
-
             SizedBox(
               height: 20.0,
             ),
-            //       Text(
-            //         'Eat',
-            //         style: kNavbarHeadingTextStyle,
-            //       ),
-            //     ],
-            //   ),
-            // ),
             Expanded(
               //WhiteSpace start
               child: Container(
                 padding: EdgeInsets.symmetric(
                   horizontal: 10.0,
+                  vertical: 0.0,
                 ),
                 decoration: kWhiteSpaceBoxDecoration,
                 child: SingleChildScrollView(
                   child: Column(
                     children: <Widget>[
                       Container(
-                        height: 400.0,
+                        height: 370.0,
                         child: ListFeatureRecipe(),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(10.0),
+                        child: Container(
+                          width: double.infinity,
+                          child: Text(
+                            'This line contains some promotion',
+                            textAlign: TextAlign.center,
+                          ),
+                        ),
                       ),
                       Container(
                         height: 120.0,
