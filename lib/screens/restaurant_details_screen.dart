@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:food_blog_app/utilities/constants.dart';
 import 'package:food_blog_app/widgets/list_food.dart';
-import 'package:food_blog_app/screens/reservation_screen.dart';
+import 'package:food_blog_app/screens/dine_in_reservation_screen.dart';
+import 'package:food_blog_app/widgets/rounded_rectangle_button.dart';
 
 class RestaurantDetailsScreen extends StatelessWidget {
   static String id = 'restaurant_details_screen';
@@ -38,7 +39,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
               ),
               child: Container(
                 // height: 550.0,
-                // height: MediaQuery.of(context).size.height * 1,
+                height: MediaQuery.of(context).size.height * 1,
 
                 width: MediaQuery.of(context).size.width * 1,
                 child: Container(
@@ -78,35 +79,16 @@ class RestaurantDetailsScreen extends StatelessWidget {
                             color: Colors.grey[400],
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 70.0, vertical: 10),
-                          child: Container(
-                            height: 50.0,
-                            width: 75.0,
-                            decoration: BoxDecoration(boxShadow: [
-                              BoxShadow(
-                                color: Colors.pink.withOpacity(0.2),
-                                spreadRadius: 4,
-                                blurRadius: 15,
-                                offset: Offset(0, 3),
-                              )
-                            ]),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                Navigator.pushNamed(
-                                    context, ReservationScreen.id);
-                              },
-                              style: ElevatedButton.styleFrom(
-                                elevation: 10,
-                                primary: Colors.red[300],
-                                shape: new RoundedRectangleBorder(
-                                  borderRadius: new BorderRadius.circular(30.0),
-                                ),
-                              ),
-                              child: Text('RESERVE FOR DINE IN'),
-                            ),
-                          ),
+                        RoundedRectangleButton(
+                          buttonHeight: 75.0,
+                          buttonWidth: 255.0,
+                          buttonText: 'RESERVE FOR DINE IN',
+                          shadowColour: Colors.pink.withOpacity(0.2),
+                          buttonPrimaryColor: Colors.red[400],
+                          onPressedFunction: () {
+                            Navigator.pushNamed(
+                                context, DineInReservationScreen.id);
+                          },
                         ),
                         Container(
                           height: MediaQuery.of(context).size.height * .5,
@@ -123,3 +105,39 @@ class RestaurantDetailsScreen extends StatelessWidget {
     );
   }
 }
+
+// class RoundedRectangleButton extends StatelessWidget {
+//   const RoundedRectangleButton({
+//     Key key,
+//   }) : super(key: key);
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Container(
+//       height: 50.0,
+//       width: 75.0,
+//       decoration: BoxDecoration(boxShadow: [
+//         BoxShadow(
+//           color: Colors.pink.withOpacity(0.2),
+//           spreadRadius: 4,
+//           blurRadius: 15,
+//           offset: Offset(0, 3),
+//         )
+//       ]),
+//
+//       child: ElevatedButton(
+//         onPressed: () {
+//           Navigator.pushNamed(context, DineInReservationScreen.id);
+//         },
+//         style: ElevatedButton.styleFrom(
+//           elevation: 10,
+//           primary: Colors.red[300],
+//           shape: new RoundedRectangleBorder(
+//             borderRadius: new BorderRadius.circular(30.0),
+//           ),
+//         ),
+//         child: Text('RESERVE FOR DINE IN'),
+//       ),
+//     );
+//   }
+// }

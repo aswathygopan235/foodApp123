@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:food_blog_app/screens/restaurants_screen.dart';
+import 'package:food_blog_app/screens/reservation_screen.dart';
 
 class FoodScreenDrawer extends StatelessWidget {
   @override
@@ -59,6 +60,7 @@ class FoodScreenDrawer extends StatelessWidget {
             onPressedFunction: () {
               //do functions
               Navigator.pop(context);
+              Navigator.pushNamed(context, ReservationScreen.id);
             },
           ),
           NewListOption(

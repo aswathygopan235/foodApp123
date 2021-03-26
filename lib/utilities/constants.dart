@@ -18,3 +18,5 @@ const TextStyle kSubheadingTextStyle = TextStyle(
   fontSize: 17.0,
   fontWeight: FontWeight.w800,
 );
+
+const kReservationFormEdgeInsets = const EdgeInsets.symmetric(vertical: 9.5);
