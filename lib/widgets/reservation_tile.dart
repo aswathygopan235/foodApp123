@@ -9,12 +9,14 @@ class ReservationTile extends StatelessWidget {
   final reservationDate;
   final reservationTime;
   final reservationStatus;
-  ReservationTile(
-      {this.reservationThumbnailImagePath,
-      this.restaurantName,
-      this.reservationDate,
-      this.reservationTime,
-      this.reservationStatus});
+
+  ReservationTile({
+    this.reservationThumbnailImagePath,
+    this.restaurantName,
+    this.reservationDate,
+    this.reservationTime,
+    this.reservationStatus,
+  });
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -54,116 +56,120 @@ class _ReservationDescription extends StatelessWidget {
   final reservationDate;
   final reservationTime;
   final reservationStatus;
-  _ReservationDescription(
-      {this.restaurantName,
-      this.reservationDate,
-      this.reservationTime,
-      this.reservationStatus});
+
+  _ReservationDescription({
+    this.restaurantName,
+    this.reservationDate,
+    this.reservationTime,
+    this.reservationStatus,
+  });
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Expanded(
-          flex: 1,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                '$restaurantName',
-                maxLines: 3,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const Padding(padding: EdgeInsets.only(bottom: 2.0)),
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Row(
-                  children: [
-                    Text(
-                      'Date:',
-                      maxLines: 10,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 12.0,
-                        color: Colors.black38,
-                      ),
-                    ),
-                    Text(
-                      '$reservationDate',
-                      maxLines: 10,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 12.0,
-                        color: Colors.black54,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 4.0),
-                child: Row(
-                  children: [
-                    Text(
-                      'Time:',
-                      maxLines: 10,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 12.0,
-                        color: Colors.black38,
-                      ),
-                    ),
-                    Text(
-                      '$reservationTime',
-                      maxLines: 10,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 12.0,
-                        color: Colors.black54,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-        Divider(
-          thickness: 1.0,
-          color: Colors.grey[400],
-        ),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: <Widget>[
-            Row(
-              children: [
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Expanded(
+            flex: 1,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
                 Text(
-                  'Status:',
-                  maxLines: 10,
+                  '$restaurantName',
+                  maxLines: 3,
                   overflow: TextOverflow.ellipsis,
                   style: const TextStyle(
-                    fontSize: 12.0,
-                    color: Colors.black38,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-                Text(
-                  '$reservationStatus',
-                  maxLines: 10,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 12.0,
-                    color: Colors.black54,
+                const Padding(padding: EdgeInsets.only(bottom: 2.0)),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Date:',
+                        maxLines: 10,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.black38,
+                        ),
+                      ),
+                      Text(
+                        '$reservationDate',
+                        maxLines: 10,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 4.0),
+                  child: Row(
+                    children: [
+                      Text(
+                        'Time:',
+                        maxLines: 10,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.black38,
+                        ),
+                      ),
+                      Text(
+                        '$reservationTime',
+                        maxLines: 10,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 12.0,
+                          color: Colors.black54,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
             ),
-          ],
-        ),
-      ],
+          ),
+          Divider(
+            thickness: 1.0,
+            color: Colors.grey[400],
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: <Widget>[
+              Row(
+                children: [
+                  Text(
+                    'Status:',
+                    maxLines: 10,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.black38,
+                    ),
+                  ),
+                  Text(
+                    '$reservationStatus',
+                    maxLines: 10,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 12.0,
+                      color: Colors.black54,
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 
 class ReservationFormField extends StatelessWidget {
   final fieldHintText;
+  final textFieldSuffixIcon;
 
   ReservationFormField({
     this.fieldHintText,
+    this.textFieldSuffixIcon,
   });
 
   @override
@@ -19,7 +21,9 @@ class ReservationFormField extends StatelessWidget {
         )
       ]),
       child: TextField(
+        textAlignVertical: TextAlignVertical.top,
         decoration: InputDecoration(
+          suffixIcon: textFieldSuffixIcon,
           fillColor: Colors.white,
           filled: true,
           // contentPadding: EdgeInsets.symmetric(horizontal: fieldHeight),
@@ -30,6 +34,8 @@ class ReservationFormField extends StatelessWidget {
             ),
           ),
           hintText: fieldHintText,
+          alignLabelWithHint: true,
+
           isDense: true,
         ),
       ),

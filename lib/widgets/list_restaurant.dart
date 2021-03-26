@@ -12,11 +12,15 @@ class ListRestaurant extends StatelessWidget {
       itemCount: restaurantData.restaurantCount,
       itemBuilder: (context, index) {
         final restaurant = restaurantData.restaurants[index];
-        return RestaurantTile(
-          restaurantName: restaurant.restaurantName,
-          restaurantDescription: restaurant.restaurantDescription,
-          restaurantThumbnailImagePath: restaurant.restaurantThumbnailImagePath,
-          onPressedFunction: () {
+        return GestureDetector(
+          behavior: HitTestBehavior.translucent,
+          child: RestaurantTile(
+            restaurantName: restaurant.restaurantName,
+            restaurantDescription: restaurant.restaurantDescription,
+            restaurantThumbnailImagePath:
+                restaurant.restaurantThumbnailImagePath,
+          ),
+          onTap: () {
             Navigator.pushNamed(context, RestaurantDetailsScreen.id);
           },
         );

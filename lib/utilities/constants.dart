@@ -20,3 +20,13 @@ const TextStyle kSubheadingTextStyle = TextStyle(
 );
 
 const kReservationFormEdgeInsets = const EdgeInsets.symmetric(vertical: 9.5);
+const kReceiptLabelTextStyle = TextStyle(
+  fontSize: 15.0,
+  color: Colors.black26,
+  fontWeight: FontWeight.w500,
+);
+const kReceiptValueTextStyle = TextStyle(
+  fontSize: 15.0,
+  color: Colors.black45,
+  fontWeight: FontWeight.w500,
+);

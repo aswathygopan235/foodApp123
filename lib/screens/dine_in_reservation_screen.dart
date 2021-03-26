@@ -3,7 +3,7 @@ import 'package:food_blog_app/utilities/constants.dart';
 import 'package:food_blog_app/widgets/form_field_label.dart';
 import 'package:food_blog_app/widgets/reservation_form_field.dart';
 import 'package:food_blog_app/widgets/rounded_rectangle_button.dart';
-import 'package:food_blog_app/screens/dine_in_reservation_screen.dart';
+import 'package:food_blog_app/screens/reservation_details_screen.dart';
 
 class DineInReservationScreen extends StatelessWidget {
   static String id = 'dine_in_reservation_screen';
@@ -82,7 +82,35 @@ class DineInReservationScreen extends StatelessWidget {
                               padding: kReservationFormEdgeInsets,
                               child: Row(
                                 children: [
-                                  FormFieldLabel(fieldLabel: 'No. of seats'),
+                                  Expanded(
+                                      child: FormFieldLabel(
+                                          fieldLabel: 'No. of seats')),
+                                  Expanded(
+                                    child: Container(
+                                      alignment: Alignment.center,
+                                      child: SizedBox(
+                                        height: 50,
+                                        width: 100,
+                                        child: OutlinedButton(
+                                          onPressed: () {},
+                                          style: OutlinedButton.styleFrom(
+                                            onSurface: Colors.red,
+                                            primary: Colors.red,
+                                            side: BorderSide(
+                                              width: 2.0,
+                                              color: Colors.red,
+                                              style: BorderStyle.solid,
+                                            ),
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30.0),
+                                            ),
+                                          ),
+                                          child: Text('-      1      +'),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ],
                               ),
                             ),
@@ -97,7 +125,10 @@ class DineInReservationScreen extends StatelessWidget {
                                   Expanded(
                                     flex: 2,
                                     child: ReservationFormField(
-                                        fieldHintText: 'yyyy/MM/dd HH:mm'),
+                                      fieldHintText: 'yyyy/MM/dd HH:mm ',
+                                      textFieldSuffixIcon:
+                                          Icon(Icons.calendar_today),
+                                    ),
                                   ),
                                 ],
                               ),
@@ -119,7 +150,9 @@ class DineInReservationScreen extends StatelessWidget {
                                   )
                                 ]),
                                 child: TextField(
+                                  textAlignVertical: TextAlignVertical.top,
                                   maxLines: 6,
+                                  // expands: true,
                                   decoration: InputDecoration(
                                     fillColor: Colors.white,
                                     filled: true,
@@ -130,7 +163,7 @@ class DineInReservationScreen extends StatelessWidget {
                                         Radius.circular(30.0),
                                       ),
                                     ),
-                                    labelText: 'Enter instructions if needed',
+                                    hintText: 'Enter instructions if needed',
                                     isDense: true,
                                   ),
                                 ),
@@ -148,7 +181,7 @@ class DineInReservationScreen extends StatelessWidget {
                                   buttonPrimaryColor: Colors.red[400],
                                   onPressedFunction: () {
                                     Navigator.pushNamed(
-                                        context, DineInReservationScreen.id);
+                                        context, ReservationDetailsScreen.id);
                                   },
                                 ),
                               ),

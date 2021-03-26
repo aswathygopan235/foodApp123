@@ -7,19 +7,17 @@ class RestaurantTile extends StatelessWidget {
   final String restaurantThumbnailImagePath;
   final String restaurantName;
   final String restaurantDescription;
-  final Function onPressedFunction;
 
-  RestaurantTile(
-      {this.restaurantThumbnailImagePath,
-      this.restaurantName,
-      this.restaurantDescription,
-      this.onPressedFunction});
+  RestaurantTile({
+    this.restaurantThumbnailImagePath,
+    this.restaurantName,
+    this.restaurantDescription,
+  });
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
-      child: GestureDetector(
-        onTap: onPressedFunction,
+    return GestureDetector(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 5.0),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 10.0),
           child: Container(

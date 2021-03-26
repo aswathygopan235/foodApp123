@@ -26,7 +26,7 @@ class RoundedRectangleButton extends StatelessWidget {
         child: ElevatedButton(
           onPressed: onPressedFunction,
           style: ElevatedButton.styleFrom(
-            elevation: 30,
+            elevation: 20,
             shadowColor: shadowColour,
             primary: buttonPrimaryColor,
             shape: RoundedRectangleBorder(
