@@ -4,7 +4,7 @@ import 'package:food_blog_app/utilities/constants.dart';
 import 'package:food_blog_app/widgets/list_reservation.dart';
 
 class ReservationScreen extends StatelessWidget {
-  static String id = 'restaurant_screen';
+  static String id = 'reservation_screen';
 
   @override
   Widget build(BuildContext context) {
@@ -36,8 +36,9 @@ class ReservationScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(vertical: 18.0),
                   child: Container(
-                      // child: ListReservation(),
-                      ),
+                    height: 1000.0,
+                    child: ListReservation(),
+                  ),
                 ),
               ),
             ),

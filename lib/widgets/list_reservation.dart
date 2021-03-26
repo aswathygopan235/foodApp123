@@ -7,7 +7,7 @@ class ListReservation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      scrollDirection: Axis.horizontal,
+      scrollDirection: Axis.vertical,
       itemCount: reservationData.reservationCount,
       itemBuilder: (context, index) {
         final reservation = reservationData.reservations[index];

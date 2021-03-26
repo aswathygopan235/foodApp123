@@ -20,6 +20,24 @@ class FoodData {
       foodDescription: 'About Food',
       foodPrice: 'food price',
     ),
+    Food(
+      foodImage: 'images/food1.jpg',
+      foodName: 'Food name',
+      foodDescription: 'About Food',
+      foodPrice: 'food price',
+    ),
+    Food(
+      foodImage: 'images/food2.jpg',
+      foodName: 'Food name',
+      foodDescription: 'About Food',
+      foodPrice: 'food price',
+    ),
+    Food(
+      foodImage: 'images/food1.jpg',
+      foodName: 'Food name',
+      foodDescription: 'About Food',
+      foodPrice: 'food price',
+    ),
   ];
 
   int get foodCount {

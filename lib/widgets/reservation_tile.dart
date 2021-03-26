@@ -21,7 +21,7 @@ class ReservationTile extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
       child: Container(
         child: SizedBox(
-          height: 100,
+          height: 130,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -33,7 +33,12 @@ class ReservationTile extends StatelessWidget {
               Expanded(
                 child: Padding(
                   padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
-                  child: _ReservationDescription(),
+                  child: _ReservationDescription(
+                    restaurantName: restaurantName,
+                    reservationDate: reservationStatus,
+                    reservationTime: reservationTime,
+                    reservationStatus: reservationStatus,
+                  ),
                 ),
               )
             ],
@@ -54,7 +59,6 @@ class _ReservationDescription extends StatelessWidget {
       this.reservationDate,
       this.reservationTime,
       this.reservationStatus});
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -65,28 +69,26 @@ class _ReservationDescription extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Container(
-                child: Text(
-                  '$restaurantName',
-                  maxLines: 3,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontWeight: FontWeight.bold,
-                  ),
+              Text(
+                '$restaurantName',
+                maxLines: 3,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const Padding(padding: EdgeInsets.only(bottom: 2.0)),
-              Container(
-                height: 15.0,
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: Row(
                   children: [
                     Text(
-                      'Date',
+                      'Date:',
                       maxLines: 10,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontSize: 12.0,
-                        color: Colors.black54,
+                        color: Colors.black38,
                       ),
                     ),
                     Text(
@@ -95,23 +97,23 @@ class _ReservationDescription extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontSize: 12.0,
-                        color: Colors.black87,
+                        color: Colors.black54,
                       ),
                     ),
                   ],
                 ),
               ),
-              Container(
-                height: 15.0,
+              Padding(
+                padding: const EdgeInsets.only(top: 4.0),
                 child: Row(
                   children: [
                     Text(
-                      'Time',
+                      'Time:',
                       maxLines: 10,
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontSize: 12.0,
-                        color: Colors.black54,
+                        color: Colors.black38,
                       ),
                     ),
                     Text(
@@ -120,49 +122,46 @@ class _ReservationDescription extends StatelessWidget {
                       overflow: TextOverflow.ellipsis,
                       style: const TextStyle(
                         fontSize: 12.0,
-                        color: Colors.black87,
+                        color: Colors.black54,
                       ),
-                    ),
-                  ],
-                ),
-              ),
-              Divider(
-                thickness: 2.0,
-                color: Colors.grey[500],
-              ),
-              Container(
-                height: 15.0,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    Row(
-                      children: [
-                        Text(
-                          'Status',
-                          maxLines: 10,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 12.0,
-                            color: Colors.black54,
-                          ),
-                        ),
-                        Text(
-                          '$reservationStatus',
-                          maxLines: 10,
-                          overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            fontSize: 12.0,
-                            color: Colors.black87,
-                          ),
-                        ),
-                      ],
                     ),
                   ],
                 ),
               ),
             ],
           ),
+        ),
+        Divider(
+          thickness: 1.0,
+          color: Colors.grey[400],
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: <Widget>[
+            Row(
+              children: [
+                Text(
+                  'Status:',
+                  maxLines: 10,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 12.0,
+                    color: Colors.black38,
+                  ),
+                ),
+                Text(
+                  '$reservationStatus',
+                  maxLines: 10,
+                  overflow: TextOverflow.ellipsis,
+                  style: const TextStyle(
+                    fontSize: 12.0,
+                    color: Colors.black54,
+                  ),
+                ),
+              ],
+            ),
+          ],
         ),
       ],
     );

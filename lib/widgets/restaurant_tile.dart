@@ -79,8 +79,8 @@ class _RestaurantTileDescription extends StatelessWidget {
                 ),
               ),
               Divider(
-                color: Colors.grey[600],
-                thickness: 2.0,
+                color: Colors.grey[400],
+                thickness: 1.0,
               ),
               const Padding(
                 padding: EdgeInsets.only(bottom: 2.0),

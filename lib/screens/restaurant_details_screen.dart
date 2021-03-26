@@ -47,47 +47,70 @@ class RestaurantDetailsScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 15.0, horizontal: 15.0),
+                          padding: const EdgeInsets.only(
+                              top: 30.0, bottom: 11.0, left: 25.0, right: 25),
                           child: Text(
                             'Some Text',
-                            textAlign: TextAlign.center,
+                            textAlign: TextAlign.left,
                             style: TextStyle(
                               fontSize: 20.0,
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 15.0,
-                            horizontal: 10.0,
+                          padding: const EdgeInsets.only(
+                            top: 11.0,
+                            left: 25.0,
+                            bottom: 10.0,
+                            right: 25.0,
                           ),
                           child: Text(
                             'Some Text',
+                            textAlign: TextAlign.left,
                             style: TextStyle(
-                              fontSize: 15.0,
-                            ),
+                                fontSize: 15.0, color: Colors.black45),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 70.0),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushNamed(
-                                  context, ReservationScreen.id);
-                            },
-                            style: ElevatedButton.styleFrom(
-                              elevation: 10,
-                            ),
-                            child: Text(' Elevated Button'),
+                          padding:
+                              const EdgeInsets.only(left: 25.0, right: 25.0),
+                          child: Divider(
+                            color: Colors.grey[400],
                           ),
                         ),
-                        Divider(
-                          color: Colors.grey[300],
+                        Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 70.0, vertical: 10),
+                          child: Container(
+                            height: 50.0,
+                            width: 75.0,
+                            decoration: BoxDecoration(boxShadow: [
+                              BoxShadow(
+                                color: Colors.pink.withOpacity(0.2),
+                                spreadRadius: 4,
+                                blurRadius: 15,
+                                offset: Offset(0, 3),
+                              )
+                            ]),
+                            child: ElevatedButton(
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                    context, ReservationScreen.id);
+                              },
+                              style: ElevatedButton.styleFrom(
+                                elevation: 10,
+                                primary: Colors.red[300],
+                                shape: new RoundedRectangleBorder(
+                                  borderRadius: new BorderRadius.circular(30.0),
+                                ),
+                              ),
+                              child: Text('RESERVE FOR DINE IN'),
+                            ),
+                          ),
                         ),
                         Container(
-                          // height: MediaQuery.of(context).size.height * .95,
-                          height: 300.0,
+                          height: MediaQuery.of(context).size.height * .5,
+                          // height: 300.0,
                           child: ListFood(),
                         ),
                       ]),
