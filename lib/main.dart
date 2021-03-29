@@ -5,6 +5,7 @@ import 'package:food_blog_app/screens/restaurant_details_screen.dart';
 import 'package:food_blog_app/screens/reservation_screen.dart';
 import 'package:food_blog_app/screens/dine_in_reservation_screen.dart';
 import 'package:food_blog_app/screens/reservation_details_screen.dart';
+import 'package:food_blog_app/screens/food_details_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         ReservationScreen.id: (context) => ReservationScreen(),
         DineInReservationScreen.id: (context) => DineInReservationScreen(),
         ReservationDetailsScreen.id: (context) => ReservationDetailsScreen(),
+        FoodDetailsScreen.id: (context) => FoodDetailsScreen(),
       },
     );
   }

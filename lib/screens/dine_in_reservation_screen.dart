@@ -4,6 +4,7 @@ import 'package:food_blog_app/widgets/form_field_label.dart';
 import 'package:food_blog_app/widgets/reservation_form_field.dart';
 import 'package:food_blog_app/widgets/rounded_rectangle_button.dart';
 import 'package:food_blog_app/screens/reservation_details_screen.dart';
+import 'package:food_blog_app/widgets/rounded_inc_dec_button.dart';
 
 class DineInReservationScreen extends StatelessWidget {
   static String id = 'dine_in_reservation_screen';
@@ -86,29 +87,13 @@ class DineInReservationScreen extends StatelessWidget {
                                       child: FormFieldLabel(
                                           fieldLabel: 'No. of seats')),
                                   Expanded(
-                                    child: Container(
-                                      alignment: Alignment.center,
-                                      child: SizedBox(
-                                        height: 50,
-                                        width: 100,
-                                        child: OutlinedButton(
-                                          onPressed: () {},
-                                          style: OutlinedButton.styleFrom(
-                                            onSurface: Colors.red,
-                                            primary: Colors.red,
-                                            side: BorderSide(
-                                              width: 2.0,
-                                              color: Colors.red,
-                                              style: BorderStyle.solid,
-                                            ),
-                                            shape: RoundedRectangleBorder(
-                                              borderRadius:
-                                                  BorderRadius.circular(30.0),
-                                            ),
-                                          ),
-                                          child: Text('-      1      +'),
-                                        ),
-                                      ),
+                                    child: RoundedIncDecButton(
+                                      minValue: 1,
+                                      maxValue: 100,
+                                      buttonHeight: 50,
+                                      buttonWidth: 120,
+                                      stepValue: 1,
+                                      borderTextIconColour: Colors.red,
                                     ),
                                   ),
                                 ],
