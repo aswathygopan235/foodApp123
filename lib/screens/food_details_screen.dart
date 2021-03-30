@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:food_blog_app/utilities/constants.dart';
 import 'package:food_blog_app/widgets/rounded_rectangle_button.dart';
 import 'package:food_blog_app/screens/food_screen.dart';
+import 'package:food_blog_app/widgets/rounded_inc_dec_button.dart';
 
 class FoodDetailsScreen extends StatelessWidget {
   static String id = 'food_details_screen';
@@ -136,27 +137,13 @@ class FoodDetailsScreen extends StatelessWidget {
                                         children: [
                                           Container(
                                             alignment: Alignment.center,
-                                            child: SizedBox(
-                                              height: 50,
-                                              width: 100,
-                                              child: OutlinedButton(
-                                                onPressed: () {},
-                                                style: OutlinedButton.styleFrom(
-                                                  onSurface: Colors.red,
-                                                  primary: Colors.red,
-                                                  side: BorderSide(
-                                                    width: 2.0,
-                                                    color: Colors.red,
-                                                    style: BorderStyle.solid,
-                                                  ),
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            30.0),
-                                                  ),
-                                                ),
-                                                child: Text('-      1      +'),
-                                              ),
+                                            child: RoundedIncDecButton(
+                                              minValue: 1,
+                                              maxValue: 100,
+                                              buttonHeight: 50,
+                                              buttonWidth: 120,
+                                              stepValue: 1,
+                                              borderTextIconColour: Colors.red,
                                             ),
                                           ),
                                           Container(
